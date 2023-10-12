@@ -1,5 +1,9 @@
-import { Col, Container, Nav, Row, TabContainer, TabContent } from "react-bootstrap";
+import React from 'react'
+import { Col, Container, Nav,Tab, Row, TabContainer, TabContent } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
+import projImg1 from "../assets/img/project-img1.png"
+import projImg2 from "../assets/img/project-img2.png"
+import projImg3 from "../assets/img/project-img3.png"
 import colorSharp2 from "../assets/img/color-sharp2.png"
 export const Projects=()=>{
 const projects = [
@@ -42,7 +46,7 @@ const projects = [
                     <h2>Projects</h2>
                     <p>Description</p>
                     <TabContainer id="projects-tabs" defaultActiveKey="/first">
-                    <Nav variant="pills" defaultActiveKey="/home">
+                    <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
                         <Nav.Item>
                             <Nav.Link eventKey="first">Tab One</Nav.Link>
                         </Nav.Item>
