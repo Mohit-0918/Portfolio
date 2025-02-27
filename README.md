@@ -39,5 +39,4 @@ This project uses the following key dependencies:
 - Bootstrap
 - Various testing libraries
 
-## License
-This project is licensed under the MIT License.
+
