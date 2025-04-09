@@ -48,7 +48,7 @@ export const NavBar =()=>{
                 <a href="https://www.linkedin.com/in/mohit-sharma0918"><img src={navIcon2} alt="" /></a>
                 <a href="https://www.linkedin.com/in/mohit-sharma0918"><img src={navIcon3} alt="" /></a>
                 </div>
-                <button className="vvd" onClick={()=>console.log('connect')}><span>Lets Connect</span></button>
+                <button className="vvd" onClick={()=>window.open('https://www.linkedin.com/in/mohit-sharma0918/', '_blank')}><span>Lets Connect</span></button>
             </span>
             </Navbar.Collapse>
         </Container>

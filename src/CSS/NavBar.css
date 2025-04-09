@@ -1,4 +1,3 @@
-
 /************ Navbar Css ************/
 nav.navbar {
     padding: 18px 0;
@@ -98,12 +97,18 @@ span.navbar-text {
 }
 .navbar-text button:hover {
     color: #121212;
+    background-color: transparent; /* Ensure background remains transparent */
 }
 .navbar-text button:hover::before {
     content: "";
     width: 100%;
     height: 100%;
     position: absolute;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    z-index: -1;
+    transition: 0.3s ease-in-out; /* Smooth hover effect */
 }
 nav.navbar .navbar-toggler:active,
 nav.navbar .navbar-toggler:focus {
