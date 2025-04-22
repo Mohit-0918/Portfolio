@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg from "../assets/img/header-img.svg";
-
+import profileImg from "../assets/img/ProfileImage.jpg";
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
@@ -68,11 +68,15 @@ export const Banner = () => {
             <Container>
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
-                        <span className="tagline">Welcome</span>
+                        
+                        <div className="profile-image-container">
+                            <img src={profileImg} alt="Profile" className="profile-image" />
+                        </div>
+                
                         <h1>{'Hi I am Mohit '}<br /><span className="wrap">{text}</span></h1>
                         <p>{description}</p>
                     </Col>
-                    <Col xs={12} md={6} xl={5}>
+                    <Col className ="ImageMove" xs={12} md={6} xl={5}>
                         <img src={headerImg} alt="Header img" />
                     </Col>
                 </Row>
