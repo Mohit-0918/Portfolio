@@ -15,15 +15,15 @@ export const Skills = () => {
             skills: [
                 { img: meter1, title: "Java" },
                 { img: meter2, title: "C" },
-                { img: meter3, title: "C++" },
-                { img: meter1, title: "Python" }
+                { img: meter1, title: "C++" },
+                { img: meter3, title: "Python" }
             ]
         },
         {
             category: "Frameworks",
             skills: [
                 { img: meter2, title: "React" },
-                { img: meter3, title: "Swing*" },
+                { img: meter3, title: "Swing" },
                 { img: meter1, title: "NodeJS" },
                 { img: meter2, title: "Spring" }
             ]
@@ -31,19 +31,18 @@ export const Skills = () => {
         {
             category: "Database",
             skills: [
-                { img: meter3, title: "SQL" },
-                { img: meter1, title: "MongoDB*" }
+                { img: meter1, title: "SQL" },
+                { img: meter1, title: "MongoDB" },
+                { img: meter3, title: "pgSQL" }
             ]
         },
         {
             category: "Others",
             skills: [
-                { img: meter3, title: "Git" },
-                { img: meter1, title: "Linux" },
-                { img: meter2, title: "OpenCV*" },
+                { img: meter1, title: "Git" },
                 { img: meter3, title: "Deep Learning" },
                 { img: meter1, title: "REST APIs" },
-                { img: meter2, title: "Google Cloud*" }
+                { img: meter2, title: "Google Cloud" }
             ]
         }
     ];
