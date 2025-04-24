@@ -73,11 +73,29 @@ border: 1px solid rgba(255, 255, 255, 0.5);
 border-radius: 0 55px 55px 0;
 }
 .proj-imgbx {
-position: relative;
-border-radius: 30px;
-overflow: hidden;
-margin-bottom: 24px;
+    width: 100%;
+    aspect-ratio: 4 / 3; /* Maintains aspect ratio */
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    position: relative;
 }
+
+.proj-imgbx img {
+width: 100%; /* Fill the box */
+height: 100%; /* Fill the box */
+object-fit:cover; /* Maintain aspect ratio and cover the box */
+transition: transform 0.3s ease-in-out;
+
+}
+
+.proj-imgbx:hover img {
+transform: scale(1.1); /* Zoom effect on hover */
+}
+
 .proj-imgbx::before {
 content: "";
 background: linear-gradient(90.21deg, #AA367C -5.91%, #4A2FBD 111.58%);
@@ -85,11 +103,15 @@ opacity: 0.85;
 position: absolute;
 width: 100%;
 height: 0;
-transition: 0.4s ease-in-out;
+border-radius: 30px;
+transition: height 0.4s ease-in-out;
+z-index: 1; /* Ensure the gradient is below the image */
 }
+
 .proj-imgbx:hover::before {
-height: 100%;
+height: 100%; /* Fill the entire box on hover */
 }
+
 .proj-txtx {
 position: absolute;
 text-align: center;
@@ -99,6 +121,7 @@ transform: translate(-50%, -50%);
 transition: 0.5s ease-in-out;
 opacity: 0;
 width: 100%;
+z-index: 2; /* Ensure the text is above the gradient */
 }
 .proj-imgbx:hover .proj-txtx {
 top: 50%;

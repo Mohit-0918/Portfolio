@@ -1,82 +1,61 @@
 import React from 'react'
 import { Col, Container, Nav,Tab, Row, TabContainer, TabContent } from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
-import projImg1 from "../assets/img/project-img1.png"
-import projImg2 from "../assets/img/project-img2.png"
-import projImg3 from "../assets/img/project-img3.png"
+import projImg1 from "../assets/img/project-img9.jpg"
+import projImg2 from "../assets/img/project-img5.png"
+import projImg3 from "../assets/img/project-img6.png"
+import projImg4 from "../assets/img/project-img7.png"
+import projImg5 from "../assets/img/project-img8.jpg"
 import colorSharp2 from "../assets/img/color-sharp2.png"
 export const Projects=()=>{
-const projects = [
-    {
-        title: "Business Startup",
-        description: "Design & Development",
-        imgUrl: projImg1,
-    },
-    {
-        title: "Business Startup",
-        description: "Design & Development",
-        imgUrl: projImg2,
-    },
-    {
-        title: "Business Startup",
-        description: "Design & Development",
-        imgUrl: projImg3,
-    },
-    {
-        title: "Business Startup",
-        description: "Design & Development",
-        imgUrl: projImg1,
-    },
-    {
-        title: "Business Startup",
-        description: "Design & Development",
-        imgUrl: projImg2,
-    },
-    {
-        title: "Business Startup",
-        description: "Design & Development",
-        imgUrl: projImg3,
-    },
+    const projects = [
+        {
+            title: "Vidya Vatra",
+            description: "An educational platform for academic content and learning tools.",
+            imgUrl: projImg1,
+            githubUrl: "https://github.com/Mohit-0918/Vidya-Vatra",
+        },
+        {
+            title: "Aura - AI Voice Assistant",
+            description: "A personal voice assistant capable of performing intelligent tasks.",
+            imgUrl: projImg4,
+            githubUrl: "https://github.com/Mohit-0918/AURA",
+        },
+        {
+            title: "Library Management",
+            description: "A system to manage book inventories, members, and borrowing records.",
+            imgUrl: projImg3,
+            githubUrl: "https://github.com/Mohit-0918/Library_Management_Software",
+        },
+        {
+            title: "Emotion Detection",
+            description: "A tool that detects human emotions using facial expression analysis.",
+            imgUrl: projImg5,
+            githubUrl: "https://github.com/Mohit-0918/AURA",
+        },
+        {
+            title: "Ganpati Grid",
+            description: "A platform to mange the project tasks for college students.",
+            imgUrl: projImg2,
+            githubUrl: "https://github.com/Mohit-0918/Ganpati-Grid",
+        },
     ];
+    
     return(
         <section className="project" id="project">
             <Container>
                 <Row>
                     <Col>
                     <h2>Projects</h2>
-                    <p>Description</p>
-                    <TabContainer id="projects-tabs" defaultActiveKey="/first">
-                    <Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
-                        <Nav.Item>
-                            <Nav.Link eventKey="first">Tab One</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link eventKey="Second">Tab One</Nav.Link>
-                        </Nav.Item>
-                        <Nav.Item>
-                            <Nav.Link eventKey="third">Tab One</Nav.Link>
-                        </Nav.Item>
-                    </Nav>
-                    <TabContent>
-                        <Tab.Pane eventKey="first">
-                            <Row>
-                                {
-                                    projects.map((project,index)=>{
-                                        return(
-                                            <ProjectCard key={index}{...project}/>
-                                        )
-                                    })
-                                }
-                            </Row>
-                        </Tab.Pane>
-                        <Tab.Pane eventKey="section">
-                                <p>Description</p>
-                        </Tab.Pane>
-                        <Tab.Pane eventKey="third">
-                                <p>Description</p>
-                        </Tab.Pane>
-                    </TabContent>
-                    </TabContainer>
+                    <p></p>
+                    <Row className='g-4 mt-3'>
+                    { projects.map((project, index) => {
+                            return (
+                                <ProjectCard key={index} {...project} />
+                            );
+                        })
+                    }
+                    </Row>
                     </Col>
                 </Row>
             </Container>
