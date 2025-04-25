@@ -1,7 +1,6 @@
 import React from 'react';
 import { useState, useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg from "../assets/img/header-img.svg";
 import profileImg from "../assets/img/ProfileImage.jpg";
 export const Banner = () => {
@@ -34,7 +33,7 @@ export const Banner = () => {
         }, delta.current);
 
         return () => clearInterval(ticker);
-    }, [text, toRotate]);
+    },);
 
     const tick = () => {
         if (toRotate.length === 0) return; // Wait until toRotate is loaded

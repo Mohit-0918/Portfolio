@@ -1,5 +1,5 @@
 import React from 'react'
-import { Col, Container, Nav,Tab, Row, TabContainer, TabContent } from "react-bootstrap";
+import { Col, Container, Row} from "react-bootstrap";
 import { ProjectCard } from "./ProjectCard";
 import projImg1 from "../assets/img/project-img9.jpg"
 import projImg2 from "../assets/img/project-img5.png"
@@ -13,7 +13,7 @@ export const Projects=()=>{
             title: "Vidya Vatra",
             description: "An educational platform for academic content and learning tools.",
             imgUrl: projImg1,
-            githubUrl: "https://github.com/Mohit-0918/Vidya-Vatra",
+            githubUrl: "https://mohit-0918.github.io/Vidya-Vatra/",
         },
         {
             title: "Aura - AI Voice Assistant",
@@ -59,7 +59,7 @@ export const Projects=()=>{
                     </Col>
                 </Row>
             </Container>
-            <img className="background-image-right" src ={colorSharp2}></img>
+            <img className="background-image-right" src={colorSharp2} alt="Background design" />
         </section>
     )
 }

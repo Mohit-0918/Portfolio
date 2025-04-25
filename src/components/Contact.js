@@ -24,24 +24,46 @@ const onFormUpdate = (category, value) => {
     })
 }
 
+const validateForm = () => {
+    const { firstName, lastName, email, phone, message } = formDetails;
+    if (!firstName || !lastName || !email || !phone || !message) {
+        setStatus({ success: false, message: 'All fields are required.' });
+        return false;
+    }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        setStatus({ success: false, message: 'Invalid email address.' });
+        return false;
+    }
+    return true;
+};
+
 const handleSubmit = async (e) => {
-e.preventDefault();
-setButtonText("Sending...");
-let response = await fetch("http://localhost:5000/contact", {
-    method: "POST",
-    headers: {
-    "Content-Type": "application/json;charset=utf-8",
-    },
-    body: JSON.stringify(formDetails),
-});
-setButtonText("Send");
-let result = await response.json();
-setFormDetails(formInitialDetails);
-if (result.code == 200) {
-    setStatus({ succes: true, message: 'Message sent successfully'});
-} else {
-    setStatus({ succes: false, message: 'Something went wrong, please try again later.'});
-}
+    e.preventDefault();
+    if (!validateForm()) return;
+
+    setButtonText("Sending...");
+    try {
+        let response = await fetch("http://localhost:5000/contact", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json;charset=utf-8",
+            },
+            body: JSON.stringify({ ...formDetails, recipient: "mohit.sharma.2001rip@gmail.com" }),
+        });
+        setButtonText("Send");
+        console.log(response);
+        let result = await response.json();
+        setFormDetails(formInitialDetails);
+        if (result.code === 200) {
+            setStatus({ success: true, message: 'Message sent successfully' });
+        } else {
+            setStatus({ success: false, message: 'Something went wrong, please try again later.' });
+        }
+    } catch (error) {
+        setButtonText("Send");
+        setStatus({ success: false, message: 'An error occurred. Please try again later.' });
+    }
 };
 
 return (

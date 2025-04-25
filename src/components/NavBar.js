@@ -3,7 +3,6 @@ import {Navbar,Nav,Container} from "react-bootstrap";
 import { useState , useEffect} from "react";
 import logo from '../assets/img/Logo3.png';  
 import navIcon1 from '../assets/img/nav-icon1.svg';
-import navIcon2 from '../assets/img/nav-icon2.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
 import navIcon5 from '../assets/img/nav-icon5.svg';
 import {BrowserRouter as Router} from "react-router-dom";
