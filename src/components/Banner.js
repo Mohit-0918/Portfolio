@@ -56,7 +56,7 @@ export const Banner = () => {
         } else if (isDeleting && updatedText === '') {
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
-            delta.current = 1000; // Pause before typing the next word
+            delta.current = 500; // Pause before typing the next word
         } else {
             delta.current = 200; // Default typing speed
         }
@@ -65,13 +65,11 @@ export const Banner = () => {
     return (
         <section className="banner" id="home">
             <Container>
+            <div className="profile-image-container">
+                <img src={profileImg} alt="Profile" className="profile-image" />
+            </div>
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7}>
-                        
-                        <div className="profile-image-container">
-                            <img src={profileImg} alt="Profile" className="profile-image" />
-                        </div>
-                
                         <h1>{'Hi I am Mohit '}<br /><span className="wrap">{text}</span></h1>
                         <p>{description}</p>
                     </Col>

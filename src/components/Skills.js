@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Col, Container, Row } from "react-bootstrap";
+import { Container} from "react-bootstrap";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import meter1 from "../assets/img/meter1.svg";
@@ -42,7 +42,7 @@ export const Skills = () => {
     const handleBeforeChange = () => {
         setIsManualChange(true);
         // Delay resetting auto mode to allow user to browse
-        setTimeout(() => setIsManualChange(false), 5000);
+        setTimeout(() => setIsManualChange(false), 3000);
     };
 
     const handleAfterChange = (_, { currentSlide }) => {
@@ -52,8 +52,6 @@ export const Skills = () => {
     return (
         <section className="skill" id="skills">
             <Container>
-                <Row>
-                    <Col>
                         <div className="skill-bx">
                             <h2>Skills</h2>
                             <Carousel
@@ -91,8 +89,6 @@ export const Skills = () => {
                                 ))}
                             </Carousel>
                         </div>
-                    </Col>
-                </Row>
             </Container>
             <img className="background-image-left" src={colorSharp} alt="Background" />
         </section>

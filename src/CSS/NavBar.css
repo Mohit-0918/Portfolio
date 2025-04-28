@@ -11,6 +11,10 @@ nav.navbar.scrolled {
     padding: 0px 0;
     background-color: #121212;
 }
+nav.navbar.menu-open {
+    background-color: rgba(0, 0, 0, 0.8); /* Background color when menu is open */
+    transition: background-color 0.3s ease-in-out;
+}
 nav.navbar a.navbar-brand {
     width: 8%;
 }
