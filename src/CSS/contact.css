@@ -1,0 +1,28 @@
+.contact-status-message {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+.contact-status-message.success {
+  background: linear-gradient(90deg, #a8ff78 0%, #78ffd6 100%);
+  color: #155724;
+}
+
+.contact-status-message.error {
+  background: linear-gradient(90deg, #ff758c 0%, #ff7eb3 100%);
+  color: #721c24;
+}
+
+.contact-status-icon {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 0.75rem;
+  font-size: 1.5rem;
+}
