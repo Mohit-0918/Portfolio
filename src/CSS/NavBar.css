@@ -163,3 +163,42 @@ nav.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
     height: 40vmin;
     pointer-events: none;
 }
+.navbar-text .lets-connect-btn {
+    font-weight: 700;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 18px 34px;
+    font-size: 18px;
+    margin-left: 18px;
+    position: relative;
+    background-color: transparent;
+    transition: 0.3s ease-in-out;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+}
+.navbar-text .lets-connect-btn span {
+    z-index: 1;
+    position: relative;
+}
+.navbar-text .lets-connect-btn::before {
+    content: "";
+    width: 0%;
+    height: 100%;
+    position: absolute;
+    background-color: #fff;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    transition: 0.3s ease-in-out;
+    border-radius: 4px;
+}
+.navbar-text .lets-connect-btn:hover {
+    color: #121212;
+    background-color: transparent;
+}
+.navbar-text .lets-connect-btn:hover::before {
+    width: 100%;
+}
