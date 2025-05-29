@@ -4,7 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import headerImg from "../assets/img/header-img.svg";
 import profileImg from "../assets/img/ProfileImage.jpg";
 import StatsBanner from "./StatsBanner";
-
+import navIcon6 from '../assets/img/download2.png';
 export const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
@@ -74,6 +74,12 @@ export const Banner = () => {
                     </div>
                         <h1>{'Hi I am Mohit '}<br /><span className="wrap">{text}</span></h1>
                         <p>{description}</p>
+                        <a href="/path/to/your/resume.pdf" download className="banner-resume-btn">
+                            <button>
+                                <span>Download Resume</span>
+                                <img src={navIcon6} alt="Download Icon" style={{ width: '22px', height: '22px', marginLeft: '10px', verticalAlign: 'middle' }} />
+                            </button>
+                        </a>
                     </Col>
                     <Col className ="ImageMove" xs={12} md={6} xl={5}>
                         <img src={headerImg} alt="Header img" />

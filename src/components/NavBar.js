@@ -5,7 +5,6 @@ import logo from '../assets/img/Logo3.png';
 import navIcon1 from '../assets/img/nav-icon1.svg';
 import navIcon3 from '../assets/img/nav-icon3.svg';
 import navIcon5 from '../assets/img/nav-icon5.svg';
-import navIcon6 from '../assets/img/download2.png';
 import { BrowserRouter as Router } from "react-router-dom";
 
 export const NavBar = () => {
@@ -59,8 +58,7 @@ export const NavBar = () => {
                                 <a href="https://www.linkedin.com/in/mohit-sharma0918" target="_blank" rel="noopener noreferrer"><img src={navIcon1} alt="" /></a>
                                 <a href="https://github.com/Mohit-0918" target="_blank" rel="noopener noreferrer"><img src={navIcon5} alt="" style={{ transform: "scale(1.5)" }} /></a>
                                 <a href="https://www.instagram.com/mohit.sharma.918._?ighs=MTV4bXI1YWZqdHptMg==" target="_blank" rel="noopener noreferrer"><img src={navIcon3} alt="" /></a>
-                                <a href="https://drive.google.com/uc?export=download&id=1e_HuG28Q_lWBiBWFmfCpM-hvnIBhBE08" target="_blank" rel="noopener noreferrer"><img src={navIcon6} alt="" /></a>
-                            </div>
+                                </div>
                             <a
                               href="#connect"
                               className={
