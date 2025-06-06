@@ -121,9 +121,3 @@ MIT License
 ## Credits
 
 - Built with [React](https://reactjs.org/), [Bootstrap](https://getbootstrap.com/), [Nodemailer](https://nodemailer.com/), and [Firebase](https://firebase.google.com/).
-
----
-
-*This README was auto-generated to reflect the complete project structure and configuration as of June 6, 2025.*
-
-
