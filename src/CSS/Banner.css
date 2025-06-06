@@ -224,8 +224,11 @@
     margin: 10px auto;
     display: block;
   }
-  .profile-image-container{
+  .profile-image-container {
+    display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 0 auto 16px auto;
   }
   .wrap {
     height: 40px; /* Adjusted for better visibility */
@@ -254,12 +257,14 @@
     font-size: 14px;
     padding: 4px 6px;
   }
-  .wrap {
-    height: 40px; /* Adjusted for better visibility */
-  }
-  .profile-image-container{
+  .profile-image-container {
+    display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 auto 12px auto;
+  }
+  .wrap {
+    height: 40px; /* Adjusted for better visibility */
   }
 }
 
@@ -352,17 +357,33 @@
     flex-direction: column;
     gap: 1rem;
     padding: 20px 0 10px 0;
+    margin-bottom: 2.5rem; /* Added extra space below stats */
   }
   .stat-item {
     min-width: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
   }
   .stat-value {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #AA367C;
+    margin-bottom: 0;
+    letter-spacing: 0.5px;
   }
   .stat-label {
-    font-size: 0.8rem;
+    font-size: 1rem;
+    color: #B8B8B8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-left: 0.3em;
+    white-space: nowrap;
   }
 }
+
 .banner-resume-btn {
   display: inline-block;
   margin-top: 18px;
