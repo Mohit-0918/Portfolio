@@ -1,90 +1,129 @@
 # Portfolio
 
-## Description
-This is a personal portfolio project built with React. It showcases various skills, projects, and contact information. The project is designed to be easily customizable, allowing users to update content, styles, and functionality as needed.
+## Overview
 
-## Installation
-To set up the project locally, follow these steps:
+This is a personal portfolio project built with React, Node.js, and Firebase. It showcases skills, projects, and contact information, and is designed for easy customization and deployment.
 
-1. Clone the repository:
-   ```bash
-   git clone <repository-url>
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd Portfolio
-   ```
-3. Install the dependencies:
-   ```bash
-   npm install
-   ```
+---
 
-## Usage
-To run the project, use the following command:
-```bash
-npm start
+## Directory Structure
+
+```text
+Portfolio/
+├── apphosting.yaml         # Firebase/Cloud Run backend config
+├── firebase.json           # Firebase hosting config
+├── package.json            # Project dependencies and scripts
+├── README.md               # Project documentation (this file)
+├── Server.js               # Express server for contact form (email)
+├── build/                  # Production build output
+│   ├── asset-manifest.json # Asset mapping for build
+│   ├── ...                 # Static build files (HTML, JS, CSS, images, etc.)
+│   ├── data/               # Build-time copies of dynamic text
+│   └── static/             # Bundled static assets (css, js, media)
+├── public/                 # Public static assets
+│   ├── index.html          # Main HTML template
+│   ├── data/               # Text files for dynamic banner content
+│   └── ...                 # Images, manifest, favicon, etc.
+├── src/                    # Source code
+│   ├── App.js              # Main React app component
+│   ├── App.test.js         # App test (Jest/RTL)
+│   ├── index.js            # React entry point
+│   ├── index.css           # Global styles
+│   ├── logo.svg            # Sample logo
+│   ├── reportWebVitals.js  # Web Vitals reporting
+│   ├── setupTests.js       # Jest setup
+│   ├── assets/             # Fonts and images
+│   ├── components/         # React components
+│   │   ├── Banner.js       # Banner/intro section
+│   │   ├── Contact.js      # Contact form section
+│   │   ├── NavBar.js       # Navigation bar
+│   │   ├── ProjectCard.js  # Project card component
+│   │   ├── Projects.js     # Projects section
+│   │   ├── Skills.js       # Skills section
+│   │   └── StatsBanner.js  # Stats display
+│   ├── CSS/                # Component-specific CSS
+│   └── data/               # (Legacy) text files for banner
+└── ...
 ```
-This will start the development server and open the application in your default web browser.
 
-## Project Structure
-The project is organized into the following key directories and files:
+---
 
-- **`src/components`**: Contains React components for different sections of the portfolio (e.g., `NavBar`, `Banner`, `Skills`, `Projects`, `Contact`).
-- **`src/CSS`**: Contains CSS files for styling different components.
-- **`src/data`**: Contains text files (`toRotate.txt`, `description.txt`) used for dynamic content in the `Banner` component.
-- **`public`**: Contains static assets like images and the `index.html` file.
-- **`Server.js`**: A Node.js server for handling contact form submissions using `nodemailer`.
+## Key Files and Folders
+
+- **apphosting.yaml**: Configures backend deployment for Firebase/Cloud Run.
+- **firebase.json**: Firebase hosting settings and rewrites.
+- **Server.js**: Express server for handling contact form submissions via nodemailer (uses environment variables for credentials).
+- **build/**: Output of `npm run build`, ready for deployment.
+- **public/**: Static files served directly, including `index.html` and dynamic text for the banner.
+- **src/**: All React source code, assets, and styles.
+  - **components/**: Modular React components for each section of the portfolio.
+  - **assets/**: Fonts and images used in the UI.
+  - **CSS/**: CSS files for each component.
+  - **data/**: (Legacy) text files, not used in production.
+
+---
+
+## Main Features
+
+- **Responsive Design**: Adapts to all screen sizes using Bootstrap.
+- **Dynamic Banner**: Banner text and description are loaded from `public/data/toRotate.txt` and `public/data/description.txt`.
+- **Skills & Projects**: Easily editable in `src/components/Skills.js` and `src/components/Projects.js`.
+- **Contact Form**: Sends email using Express backend (`Server.js`) and nodemailer. Requires `.env` file with `EMAIL_USER` and `EMAIL_PASS`.
+- **Firebase Hosting**: Ready for deployment to Firebase or any static hosting provider.
+
+---
+
+## Scripts
+
+- `npm start` — Start development server
+- `npm run build` — Build for production
+- `npm test` — Run tests
+- `npm run deploy` — Build and deploy to Firebase
+
+---
 
 ## Customization
-### 1. **Updating Content**
-   - **Skills**: Update the `Skills.js` file in `src/components` to add or modify skill categories and items.
-   - **Projects**: Update the `Projects.js` file in `src/components` to add or modify project details.
-   - **Banner**: Modify the `toRotate.txt` and `description.txt` files in the `src/data` folder to update the rotating text and description in the banner.
 
-### 2. **Styling**
-   - Modify CSS files in the `src/CSS` folder to customize the appearance of different components.
-   - For global styles, update the `App.css` file.
+- **Update Skills/Projects**: Edit `src/components/Skills.js` and `src/components/Projects.js`.
+- **Banner Text**: Edit `public/data/toRotate.txt` and `public/data/description.txt`.
+- **Images/Logos**: Replace files in `public/` or `src/assets/img/`.
+- **Contact Email**: Set up `.env` with your email credentials for nodemailer.
 
-### 3. **Contact Form**
-   - The contact form is configured to send emails using `nodemailer`. Update the `.env` file with your email credentials:
-     ```
-     EMAIL_USER=your-email@example.com
-     EMAIL_PASS=your-email-password
-     ```
-   - Ensure the backend server (`Server.js`) is running on port 3000.
+---
 
-### 4. **Assets**
-   - Replace images in the `public/assets` folder to update logos, profile pictures, or project images.
+## Deployment
 
-### 5. **Deployment**
-   - Build the project using:
-     ```bash
-     npm run build
-     ```
-   - Deploy the `build` folder to your preferred hosting platform (e.g., Firebase, Netlify, Vercel).
+1. Build the project:
 
-## Key Features
-- **Responsive Design**: The portfolio is fully responsive and adapts to different screen sizes.
-- **Dynamic Content**: The `Banner` component dynamically fetches text from files for easy updates.
-- **Contact Form**: A functional contact form with email integration using `nodemailer`.
+   ```powershell
+   npm run build
+   ```
 
-## Dependencies
-This project uses the following key dependencies:
-- React
-- Bootstrap
-- React Multi Carousel
-- Nodemailer (for backend email functionality)
+2. Deploy the `build/` folder to Firebase, Netlify, Vercel, or your preferred static host.
 
-## Testing
-Run the following command to execute tests:
-```bash
-npm test
+---
+
+## Example .env for Email (not committed to repo)
+
+```env
+EMAIL_USER=your-email@example.com
+EMAIL_PASS=your-email-password
 ```
 
-## Contributing
-Feel free to fork this repository and submit pull requests for improvements or bug fixes.
+---
 
 ## License
-This project is licensed under the MIT License.
+
+MIT License
+
+---
+
+## Credits
+
+- Built with [React](https://reactjs.org/), [Bootstrap](https://getbootstrap.com/), [Nodemailer](https://nodemailer.com/), and [Firebase](https://firebase.google.com/).
+
+---
+
+*This README was auto-generated to reflect the complete project structure and configuration as of June 6, 2025.*
 
 
